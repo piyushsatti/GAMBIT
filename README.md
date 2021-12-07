@@ -6,7 +6,7 @@
 - Qualitative performance comparison
 - Quantitative performance comparison (will include a new method for comparing two images in a qualitative manner) 
 
-> Initial lifecycle of the tool will be like so: pre-apha -> alpha -> beta -> v1.x -> ...
+> Initial lifecycle of the tool will be like so: pre-apha -> alpha -> beta -> v1.x -> ...   
 > Different features will be added at different stages of the project with the most critical aspects added first
 
 The tool is current in pre-alpha as a collection of loose scripts. In the coming weeks, a CLI tool will be developed with a variety of features as listed. We will start with a basic implementation with more complex offerings part of the beta.

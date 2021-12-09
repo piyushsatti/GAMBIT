@@ -16,4 +16,10 @@ To make sure your MATLAB functions can run using the Python script you will need
  
 In the current release, a virtual env is used to ensure that GAMBIT is independent of your other installations. For this, the MATLAB python API has been installed directly to the virtual env - [official documentation](https://in.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html) or [stackoverflow](https://stackoverflow.com/questions/31550622/call-matlab-from-a-python-virtual-environment).
 
+> matlab is stored here ../../Applications/MATLAB_R2020b.app/bin/matlab
+>
+>matlab -nodisplay -nosplash -nodesktop -r "run('path/to/your/script.m');exit;"
+>
+> We assume that the correct python version (corresponding to the appropriate MATLAB version) is installed and added to the system path. You can [refer here](https://stackoverflow.com/questions/4583367/how-to-run-multiple-python-versions-on-windows) to learn more about this. Please do let us know if you face any difficulties or would like this section expanded in the future, you may contact us directly - piyushsatti@gmail.com
+>
 > In case you wish to install this on your own, please refer to the [version compatibility sheet.](https://www.mathworks.com/content/dam/mathworks/mathworks-dot-com/support/sysreq/files/python-compatibility.pdf)

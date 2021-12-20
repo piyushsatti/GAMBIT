@@ -1,7 +1,9 @@
 import cv2 as cv, numpy as np
 from class_matlab import *
 
-#e1 = eng("./core_m/")
+# Runs a menu driven program that selects all the datasets you need and then makes a structure of all the images
+def loadImages():
+    pass
 
 if __name__ == '__main__':
     

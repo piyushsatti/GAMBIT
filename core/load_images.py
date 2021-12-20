@@ -16,6 +16,16 @@ class img_dataset:
         color_type = 'Default'
         filetype = dataset['files'][0].split('.')[-1]
         files = dataset['files']
+
+    def __repr__(self):
+        pass
+
+    def __str__(self):
+        pass
+
+    # return # of files
+    def __len__(self):
+        pass
     
     # used to load all the images associated with a dataset
     def load_images(self):

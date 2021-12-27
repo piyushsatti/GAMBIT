@@ -1,15 +1,13 @@
 import cv2 as cv, numpy as np
-from class_matlab import *
-
-# Runs a menu driven program that selects all the datasets you need and then makes a structure of all the images
-def loadImages():
-    pass
+from utils.classes.class_matlab import *
+from load_datasets import loadImages
 
 if __name__ == '__main__':
     
+    img_datasets = loadImages()
+
     img = cv.imread("./img_datasets/standard_256/house_256.tif")
     img = img[:,:,0]
-
 
     if img is None:
         print("Could not read img...")

@@ -23,3 +23,16 @@ In the current release, a virtual env is used to ensure that GAMBIT is independe
 > We assume that the correct python version (corresponding to the appropriate MATLAB version) is installed and added to the system path. You can [refer here](https://stackoverflow.com/questions/4583367/how-to-run-multiple-python-versions-on-windows) to learn more about this. Please do let us know if you face any difficulties or would like this section expanded in the future, you may contact us directly - piyushsatti@gmail.com
 >
 > In case you wish to install this on your own, please refer to the [version compatibility sheet.](https://www.mathworks.com/content/dam/mathworks/mathworks-dot-com/support/sysreq/files/python-compatibility.pdf)
+
+#### Work to be done
+>Currently, no system design structure has been used for this project and all the modules and functionalities are loosely tied together. Down the line, it would be preferable to have all the individual components much neately reqritten in a pythonic way with effective use of classes.
+
+To Do:
+- Denoising Operation
+    - addNoiseToImage(img, noise_type, noise_density) => Adding noise to images given as input
+    - denoiseImage(path_to_algo, n_img) => Should internally handle calling the appropriate resolution engine (matlab, python, c/c++, js etc.)
+    - denoiseDataset(dataset: class attribute img_dataset from ./core/utils/classes/class_img_dataset/) => Output should be written to the predefined folder structure
+- Quantitative Metrics
+    - evalQuantMetric(img, n_img, d_img, metric_type) => internally calls eval{MetricName} that deals with specific metric types; should generate a common json file for named 
+    - showQuantEval(data: the json data generated, method: should take in the form of representation) => options such as sort/group/show by {attribute} with finer selection methods must be made available. Indirect use of a SQL database may be considered to allow the user to query and search the data themselves.
+    - graphQualEval(data: same as showQualEval) => should generate the common/most-used graphs used in research papers

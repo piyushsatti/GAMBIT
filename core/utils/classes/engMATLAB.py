@@ -27,7 +27,7 @@ class engMATLAB:
 
 if __name__ == '__main__':
     # used to write quick tests of the class
-    e1 = eng("./core_m/")
+    e1 = engMATLAB("./core_m/")
     print(e1.__doc__)
     e1.test()
     del e1

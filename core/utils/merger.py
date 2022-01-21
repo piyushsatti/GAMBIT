@@ -1,5 +1,6 @@
-import cv2,os
-from PIL import Image,ImageOps
+import cv2, os
+from PIL import Image, ImageOps
+
 def merge_image(img1, img2, vertically):
     filename = img1.split('/')[-1]
     images = list(map(Image.open, [img1, img2])) 

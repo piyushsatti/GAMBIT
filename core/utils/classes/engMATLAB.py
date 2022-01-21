@@ -1,6 +1,7 @@
 import matlab.engine
+import os
 
-class eng:
+class engMATLAB:
     '''
     eng class is used for creation
     and control of a MATLAB engine 

@@ -1,4 +1,5 @@
-class img_dataset:
+class imageDataset:
+    
     def __init__(self, name: str, rel_path: str, color_type: str, file_type: str, files: list):
         self.name = name
         self.rel_path = rel_path
@@ -16,6 +17,9 @@ class img_dataset:
         file_type = dataset['files'][0].split('.')[-1]
         files = dataset['files']
         return cls(name, rel_path, color_type, file_type, files)
+
+    def setDatasetColorType(self, color_type):
+        self.color_type = color_type
 
     def __repr__(self):
         return f'''

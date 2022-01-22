@@ -1,25 +1,24 @@
+import cv2 as cv
+
 class imageDataset:
     
-    def __init__(self, name: str, rel_path: str, color_type: str, file_type: str, files: list):
-        self.name = name
-        self.rel_path = rel_path
-        self.color_type = color_type
-        self.file_type = file_type
-        self.files = files
+    def __init__(self, dataset_name: str, dataset_rel_path: str, dataset_files: list):
+        self.name = dataset_name
+        self.rel_path = dataset_rel_path
+        self.files = self.loadFilesFromPath(dataset_files)
 
-        print(f"Dataset created for {name}")
+        print(f"Dataset created for {dataset_name}")
 
     @classmethod
-    def from_terminal(cls, dataset):
+    def createDatasetFromTerminal(cls, dataset):
         name = dataset['root'].split('/')[-1]
         rel_path = dataset['root']
-        color_type = 'Default'
-        file_type = dataset['files'][0].split('.')[-1]
         files = dataset['files']
-        return cls(name, rel_path, color_type, file_type, files)
+        return cls(name, rel_path, files)
 
-    def setDatasetColorType(self, color_type):
-        self.color_type = color_type
+    def loadFilesFromPath(self, dataset_files):
+        for file in dataset_files:
+            pass
 
     def __repr__(self):
         return f'''

@@ -1,11 +1,12 @@
+from email.mime import image
 import os
 from simple_term_menu import TerminalMenu
-from utils.classes.class_img_dataset import img_dataset
+from utils.classes.imageDataset import imageDataset
 
-def checkTree(tree):
+def checkDatasetTree(tree):
     '''
-    checks the tree for standard pathing
-    pathing is defined in the documentation
+    checks the dataset tree for standard
+    pathing as defined in the documentation
     '''
     state = (True, None)
     for i in range(len(tree)):
@@ -37,7 +38,7 @@ def walkDir(path):
 
     return (1,tree)
 
-def getDatasets(path: str):
+def getDatasetsFromPath(path: str):
     '''
     scans the default directory for datasets 
     checks they are in the correct format
@@ -45,35 +46,23 @@ def getDatasets(path: str):
     '''
     ret = walkDir(path)
     if not ret[0]:
-        print('encountered an issue... quitting')
+        print('encountered an issue with walking on the path... quitting')
         quit()
     else:
         dataset_tree = ret[1]
     
-    ret = checkTree(dataset_tree)
+    ret = checkDatasetTree(dataset_tree)
     if not ret[0]:
-        print('encountered an issue... quitting')
+        print('encountered an issue while checking the dataset tree... quitting')
         quit()
     else:
         dataset_tree = ret[1]
 
     return dataset_tree
 
-def createClass(selected_datasets):
-    '''
-    filetype conversion for easier access
-    class allows more flexibility down the line
-    '''
-    dataset_obj = []
-    for dataset in selected_datasets:
-        tmp = img_dataset(dataset)
-        dataset_obj.append(tmp)
+def createImageDatasetObjectFromPath(path):
 
-    return dataset_obj
-
-def loadImages(path='./img_datasets'):
-
-    datasets = getDatasets(path)
+    datasets = getDatasetsFromPath(path)
 
     terminal_menu = TerminalMenu(
         datasets[0]['dirs'],
@@ -87,11 +76,19 @@ def loadImages(path='./img_datasets'):
         if dataset['root'].split('/')[-1] in terminal_menu.chosen_menu_entries:
             selected_datasets.append(dataset)
 
-    # create selected dataset class instace
-    datasets_obj = [img_dataset.from_terminal(dataset) for dataset in selected_datasets]
+    return createClassObjectFromDatasets(selected_datasets)
+    
+
+def createClassObjectFromDatasets(selected_datasets):
+    '''
+    filetype conversion for easier access
+    class allows more flexibility down the line
+    '''
+    datasets_obj = [imageDataset.createDatasetFromTerminal(dataset) for dataset in selected_datasets]
     return datasets_obj
 
 if __name__ == "__main__":
-    path = './img_datasets'
-    tmp = loadImages()
+    # quick test
+    path = './image-datasets'
+    tmp = createImageDatasetObjectFromPath(path)
     [print(e) for e in tmp]

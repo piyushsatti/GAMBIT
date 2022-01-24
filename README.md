@@ -1,4 +1,4 @@
-###### The GUI Tool for Image Denoising Research (dubbed GAMBIT) hopes to reduce evaluation, testing, and verification time of new research into the domain of Image Denoising. This is a collection of tools that should drastically speed up the rate of innovation by reducing the time spent on testing so that researchers spend time on ideation instead.
+###### The GUI Tool for Image Denoising Research (dubbed GAMBIT) hopes to reduce evaluation, testing, and verification time of new research into the domain of Image Denoising. This is a collection of tools that should drastically speed up the rate of innovation by reducing the time spent on testing so that researchers spend time on ideation instead. If OpenCV is not getting installed use  ```pip install --upgrade wheel```
 
 ### List of Features: 
 - Generating denoised images for a selected set of images and a range of noise densities (Default: standard image dataset and 10->90% noise range with 10% step size)
@@ -28,11 +28,11 @@ In the current release, a virtual env is used to ensure that GAMBIT is independe
 >Currently, no system design structure has been used for this project and all the modules and functionalities are loosely tied together. Down the line, it would be preferable to have all the individual components much neately reqritten in a pythonic way with effective use of classes.
 
 To Do:
-- Denoising Operation
-    - addNoiseToImage(img, noise_type, noise_density) => Adding noise to images given as input
-    - denoiseImage(path_to_algo, n_img) => Should internally handle calling the appropriate resolution engine (matlab, python, c/c++, js etc.)
-    - denoiseDataset(dataset: class attribute img_dataset from ./core/utils/classes/class_img_dataset/) => Output should be written to the predefined folder structure
-- Quantitative Metrics
-    - evalQuantMetric(img, n_img, d_img, metric_type) => internally calls eval{MetricName} that deals with specific metric types; should generate a common json file for named 
-    - showQuantEval(data: the json data generated, method: should take in the form of representation) => options such as sort/group/show by {attribute} with finer selection methods must be made available. Indirect use of a SQL database may be considered to allow the user to query and search the data themselves.
-    - graphQualEval(data: same as showQualEval) => should generate the common/most-used graphs used in research papers
+- [ ] Denoising Operation
+    - [ ] addNoiseToImage(img, noise_type, noise_density) => Adding noise to images given as input
+    - [ ] denoiseImage(path_to_algo, n_img) => Should internally handle calling the appropriate resolution engine (matlab, python, c/c++, js etc.)
+    - [ ] denoiseDataset(dataset: class attribute img_dataset from ./core/utils/classes/class_img_dataset/) => Output should be written to the predefined folder structure
+- [ ] Quantitative Metrics
+    - [ ] evalQuantMetric(img, n_img, d_img, metric_type) => internally calls eval{MetricName} that deals with specific metric types; should generate a common json file for named 
+    - [ ] showQuantEval(data: the json data generated, method: should take in the form of representation) => options such as sort/group/show by {attribute} with finer selection methods must be made available. Indirect use of a SQL database may be considered to allow the user to query and search the data themselves.
+    - [ ] graphQualEval(data: same as showQualEval) => should generate the common/most-used graphs used in research papers

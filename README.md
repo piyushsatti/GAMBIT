@@ -36,3 +36,6 @@ To Do:
     - [ ] evalQuantMetric(img, n_img, d_img, metric_type) => internally calls eval{MetricName} that deals with specific metric types; should generate a common json file for named 
     - [ ] showQuantEval(data: the json data generated, method: should take in the form of representation) => options such as sort/group/show by {attribute} with finer selection methods must be made available. Indirect use of a SQL database may be considered to allow the user to query and search the data themselves.
     - [ ] graphQualEval(data: same as showQualEval) => should generate the common/most-used graphs used in research papers
+
+## Why this project?
+>This project has been a personal favorite due to several reasons. Firstly, it eases the implementation and testing time of algorithms in my domain significantly. Secondly, it helps me and my team improve our rate of development of the NERD repository. Lastly, it can be shipped as a free-to-use product for fellow researchers! having someone use something you create is one of the best accomplishments one can get.
